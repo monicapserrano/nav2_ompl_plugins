@@ -1,0 +1,5 @@
+<library path="nav2_ompl_planner_plugin">
+	<class name="nav2_ompl_planner/InformedRRTStarPlanner" type="nav2_ompl_planner::InformedRRTStarPlanner" base_class_type="nav2_core::GlobalPlanner">
+	  <description>OMPL Informed RRT Start geometric planner plugin.</description>
+	</class>
+</library>
