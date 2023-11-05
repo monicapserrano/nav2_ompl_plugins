@@ -5,7 +5,7 @@
   <version>1.0.0</version>
   <description>OMPL Informed RRT Star geometric global planner.</description>
   <maintainer email="monica.peerez@gmail.com">Monica Perez Serrano</maintainer>
-  <license>TODO</license>
+  <license>MIT</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
