@@ -1,6 +1,6 @@
 # nav2_ompl_plugins
-
-## Run the controller
+## nav2_ompl_planner
+### Run the planner
 1. Clone the repository and build in your colcon workspace:
 ````
 cd colcon_ws
@@ -20,7 +20,7 @@ planner_server:
       solving_time_s: 1.0
 ````
 
-## Visualization
+### Visualization
 <p align="center">
 <img src="informed_rrt_star_planner.png"/>
 </p>
