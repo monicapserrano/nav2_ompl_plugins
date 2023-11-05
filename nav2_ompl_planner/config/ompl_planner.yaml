@@ -5,5 +5,3 @@ planner_server:
     GridBased:
       plugin: "nav2_ompl_planner/InformedRRTStarPlanner"
       solving_time_s: 10.0
-planner_server_rclcpp_node:
-  ros__parameters:
