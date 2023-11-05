@@ -79,10 +79,9 @@ bool InformedRRTStarPlanner::isStateValid(
 void InformedRRTStarPlanner::configure(
   const rclcpp_lifecycle::LifecycleNode::WeakPtr & parent,
   std::string name, std::shared_ptr<tf2_ros::Buffer> tf,
-  std::shared_ptr<nav2_costmap_2d::Costmap2DROS> costmap_ros)
-{
-
-  std::cout << "[InformedRRTStar] Calling configure." << std::endl;
+  std::shared_ptr<nav2_costmap_2d::Costmap2DROS> costmap_ros){
+  RCLCPP_INFO(
+      node_->get_logger(),"[InformedRRTStar] Calling configure.");
   node_ = parent.lock();
   name_ = name;
   tf_ = tf; // Not used for now
@@ -98,8 +97,7 @@ void InformedRRTStarPlanner::configure(
 
 nav_msgs::msg::Path InformedRRTStarPlanner::createPlan(
   const geometry_msgs::msg::PoseStamped& start,
-  const geometry_msgs::msg::PoseStamped& goal)
-{
+  const geometry_msgs::msg::PoseStamped& goal){
   RCLCPP_DEBUG(node_->get_logger(), "[InformedRRTStar] Start frame_id %s.",
     start.header.frame_id.c_str());
   RCLCPP_DEBUG(node_->get_logger(), "[InformedRRTStar] Goal frame_id %s.",
