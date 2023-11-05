@@ -1,14 +1,14 @@
 # nav2_ompl_plugins
 
 ## Run the controller
-1. Clone the repository in your colcon workspace
+1. Clone the repository and build in your colcon workspace:
 ````
 cd colcon_ws
 colcon build --packages-select nav2_ompl_planner --symlink-install
 source install/setup.bash
 ````
 
-2. Run the controller
+2. Add the planner in your nav2 configuration
 Replace the following lines in your nav2 config file:
 ````
 planner_server:
