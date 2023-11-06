@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(nav2_ompl_planner)
+project(nav2_informed_rrt_star_planner)
 
 set(CMAKE_CXX_STANDARD 14)
 
@@ -46,6 +46,8 @@ set(dependencies
 )
 
 add_library(${library_name} SHARED
+  src/helper_functions.cc
+  src/informed_rrt_star_impl.cc
   src/informed_rrt_star_planner.cc
 )
 
@@ -57,7 +59,7 @@ target_compile_definitions(${library_name} PUBLIC )
 
 pluginlib_export_plugin_description_file(nav2_core global_planner_plugin.xml)
 
-target_link_libraries(${library_name} ${rclcpp_LIBRARIES} ${Boost_LIBRARIES} ${OMPL_LIBRARIES}
+target_link_libraries(${library_name} ${rclcpp_LIBRARIES} ${Boost_LIBRARIES} ${OMPL_LIBRARIES} ${nav2_costmap_2d_LIBRARIES} 
 )
 
 install(TARGETS ${library_name}

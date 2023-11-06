@@ -8,10 +8,8 @@
  *
  */
 
-
 #pragma once
 
-#include <boost/thread/mutex.hpp>
 #include <geometry_msgs/msg/pose_stamped.hpp>
 #include <nav2_core/global_planner.hpp>
 #include <nav_msgs/msg/path.hpp>
@@ -21,14 +19,16 @@
 #include <ompl/base/SpaceInformation.h>
 #include <rclcpp/rclcpp.hpp>
 
+#include "nav2_informed_rrt_star_planner/informed_rrt_star_impl.h"
+
 namespace ob = ompl::base;
-namespace nav2_ompl_planner{
+namespace nav2::ompl::planner::informed_rrt_star{
 
 class InformedRRTStarPlanner: public nav2_core::GlobalPlanner{
 
   public:
     InformedRRTStarPlanner(){};
-    ~InformedRRTStarPlanner(){}
+    ~InformedRRTStarPlanner(){};
 
     void configure(
     const rclcpp_lifecycle::LifecycleNode::WeakPtr & parent,
@@ -55,18 +55,13 @@ class InformedRRTStarPlanner: public nav2_core::GlobalPlanner{
     const geometry_msgs::msg::PoseStamped & goal) override;
 
   private:
-    bool isStateValid(const ob::SpaceInformation* space_information, const ob::State *state);
     double solving_time_s_;
-    std::shared_ptr<tf2_ros::Buffer> tf_;
     std::vector<geometry_msgs::msg::Point> padded_footprint_;
     nav2_util::LifecycleNode::SharedPtr node_;
-    nav2_costmap_2d::Costmap2D* costmap_;
     std::string global_frame_, name_;
 
     double interpolation_resolution_;
+    Impl impl_;
 
-    const bool ALLOW_PLANNING_IN_UNKNOWN_SPACE = true;
-
-    boost::mutex mu;
 };
 }

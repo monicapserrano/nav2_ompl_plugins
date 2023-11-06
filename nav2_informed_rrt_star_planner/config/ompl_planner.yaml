@@ -1,0 +1,8 @@
+planner_server:
+  ros__parameters:
+    expected_planner_frequency: 1.0
+    use_sim_time: True
+    planner_plugins: ["GridBased"]
+    GridBased:
+      plugin: "nav2_informed_rrt_star_planner/InformedRRTStarPlanner"
+      solving_time_s: 1.0
