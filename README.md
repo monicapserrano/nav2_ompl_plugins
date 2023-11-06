@@ -22,5 +22,5 @@ planner_server:
 
 ### Visualization
 <p align="center">
-<img src="informed_rrt_star_planner.png"/>
+<img src="informed_rrt_star_planner.gif"/>
 </p>
