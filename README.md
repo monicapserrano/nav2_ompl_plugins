@@ -4,7 +4,7 @@
 1. Clone the repository and build in your colcon workspace:
 ````
 cd colcon_ws
-colcon build --packages-select nav2_ompl_planner --symlink-install
+colcon build --packages-select nav2_informed_rrt_star_planner --symlink-install
 source install/setup.bash
 ````
 
