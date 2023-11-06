@@ -1,7 +1,0 @@
-planner_server:
-  ros__parameters:
-    expected_planner_frequency: 20.0
-    planner_plugins: ["GridBased"]
-    GridBased:
-      plugin: "nav2_ompl_planner/InformedRRTStarPlanner"
-      solving_time_s: 10.0
